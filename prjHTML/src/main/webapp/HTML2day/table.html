@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table, th, td {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px 20px;
+}
+</style>
+</head>
+<body>
+	<h2>상품 구성</h2>
+	<img src="images/레드향.jpg">
+	<table>
+		<caption>선물용과 가정용 상품 구성</caption>
+		<colgroup>
+			<col style="background-color: #eee;">
+			<col>
+			<col span="2" style="width: 150px;">
+		<thead>
+			<tr>
+				<th>용도</th>
+				<th>중량</th>
+				<th>개수</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2">선물용</td>
+				<td>3kg</td>
+				<td>11~16과</td>
+				<td>35,000원</td>
+			</tr>
+			<tr>
+				<td>5kg</td>
+				<td>18~26과</td>
+				<td>52,000원</td>
+			</tr>
+			<tr>
+				<td rowspan="2">가정용</td>
+				<td>3kg</td>
+				<td>11~16과</td>
+				<td>30,000원</td>
+			</tr>
+			<tr>
+				<td>5kg</td>
+				<td>18~26과</td>
+				<td>47,000원</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>여행 일정표</h2>
+	<table>
+		<colgroup>
+			<col style="background-color: #eee;">
+			<col style="background-color: gold;">
+			<col style="background-color: lightpink;">
+			<col style="background-color: skyblue;">
+		</colgroup>
+		<thead>
+			<tr style="background-color: black; color: white">
+				<th>날짜</th>
+				<th colspan="2">장소</th>
+				<th>주요일정</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2">5/23(화)</td>
+				<td>스페인</td>
+				<td>바르셀로나</td>
+				<td>사그라다 파밀리아 성당</td>
+			</tr>
+			<tr>
+				<td>스페인</td>
+				<td>바르셀로나</td>
+				<td>구엘 공원</td>
+			</tr>
+			<tr>
+				<td rowspan="2">5/24(수)</td>
+				<td>이탈리아</td>
+				<td>로마</td>
+				<td>콜로세움</td>
+			</tr>
+			<tr>
+				<td>이탈리아</td>
+				<td>로마</td>
+				<td>바티칸시티</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
