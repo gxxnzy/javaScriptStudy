@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+<style>
+body {
+	font-family: D2Coding;
+	font-size: 30px;
+}
+
+input[type=text],input[type=password] {
+	width: 300px; 
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	padding: 10px 20px; /*첫번째 값 : 위,아래. 두번째 값 : 좌,우*/
+	
+	font-family: D2Coding;
+	font-size: 30px;
+	
+	/* 트랜지션 */
+	transition-property: width;
+	transition-duration: 2s;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	
+	font-family: D2Coding;
+	font-size: 30px;
+	
+	/* 길이  */
+	width: 500px;
+}
+</style>
+</head>
+<body>
+	<br>
+	아이디 :
+	<input type="text" maxlength="10" placeholder="아이디 입력">
+	<br><br>
+	비밀번호 :
+	<input type="password" maxlength="10" placeholder="비밀번호 입력">
+</body>
+</html>
