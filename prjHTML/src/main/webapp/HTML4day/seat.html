@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let memNum = parseInt(prompt('입장객 수는?'));
+		let colNum = parseInt(prompt('힌 줄에 앉을 사람 수는?'));
+
+		let rowNum = parseInt(memNum / colNum);
+
+		if (memNum % colNum !== 0)
+			rowNum += 1
+
+		document.write(`${rowNum}개의 줄이 필요합니다.`);
+	</script>
+</body>
+</html>

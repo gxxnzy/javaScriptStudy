@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	document.write(`<table>`);
+	let memNum = parseInt(prompt('사람 수는?'));
+	let colNum = parseInt(prompt('한 줄에 앉을 사람 수는?'));
+	
+	let rowNum = (memNum%colNum===0)?parseInt(memNum/colNum):parseInt(memNum/colNum)+1;
+	
+	for(let i=0;i<rowNum;i++){
+		document.write(`<tr>`);
+		for(let j=1;j<=colNum;j++){
+			let seatNum = i*colNum+j;
+			if(seatNum>memNum)
+				break;
+			document.write(`<td>좌석${i*colNum+j}</td>`);
+		}
+		document.write(`</tr>`);
+	}
+	document.write(`</table>`);
+
+</script>
+</body>
+</html>

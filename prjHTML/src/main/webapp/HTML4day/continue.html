@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let n = 10;
+		let sum = 0;
+
+		for (let i = 1; i <= n; i++) {
+			if (i % 2 === 1) {
+				continue
+			}
+			sum += i;
+
+		}
+		document.write(`합은 ${sum} 입니다.`);
+	</script>
+</body>
+</html>

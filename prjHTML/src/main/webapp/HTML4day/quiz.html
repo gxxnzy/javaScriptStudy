@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>3의 배수 찾기</h1>
+<script>
+	let num = parseInt(prompt('몇 까지 3의 배수를 찾을까요?'));
+	let cnt = 0;
+	for(let i=1;i<=num;i++){
+		if(i%3===0){
+			document.write(`${i}, `);
+			cnt+=1;
+		}
+	}
+	document.write(`<br><a style="color:red;">${num}까지 3의 배수의 개수 : ${cnt}<a>`);
+</script>
+</body>
+</html>

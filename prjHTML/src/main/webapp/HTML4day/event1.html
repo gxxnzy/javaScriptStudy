@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+	<li><a href="#" onclick="changeBg('green')">Green</a></li>
+	<li><a href="#" onclick="changeBg('orange')">Orange</a></li>
+	<li><a href="#" onclick="changeBg('purple')">Purple</a></li>
+	</ul>
+	<div id="result" style="background-color:black;">이벤트</div>
+	
+	<script>
+		function changeBg(color){
+			let result = document.querySelector('#result');
+			result.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>

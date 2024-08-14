@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function work() {
+			console.log("hello");
+		}
+
+		function work2(a, b) {
+			console.log("\n==== work(a,b) ====");
+			console.log("a=", a, "|b=", b);
+		}
+	</script>
+
+	<form>
+		<input type="button" value="클릭" onclick="work()">
+	</form>
+	<form>
+		<input type="button" value="클릭" onclick="work2('hello',10)">
+	</form>
+
+</body>
+</html>

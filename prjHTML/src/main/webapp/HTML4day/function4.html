@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function sayHello(){
+	return "hello";
+}
+function sayGoodbye(){
+	return "goodbye";
+}
+function say(name,fn){
+	let result = name + "님," + fn();
+	return result;
+}
+let result1 = sayHello();
+console.log("result1=",result1);
+
+let result2 = sayGoodbye();
+console.log("result2=",result2);
+
+let result3 = say("홍지원",sayHello);
+console.log("result3=",result3);
+
+let result4 = say("김여름",sayGoodbye);
+console.log("result4=",result4);
+</script>
+</body>
+</html>

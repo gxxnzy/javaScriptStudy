@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	console.log("==== person ====")
+	let person = {
+		name: "James",
+		age: 30
+	};
+	
+	console.log(person.name);
+	console.log(person.age);
+	console.log(person);
+	
+	console.log("==== coffee ====");
+	
+	let coffee = new Object();
+	coffee["name"]="아메리카노";
+	coffee["price"] = 3000;
+	
+	console.log(coffee["name"]);
+	console.log(coffee["price"]);
+	console.log(coffee);
+	
+	console.log("==== 추가 ====");
+	person.address="서울"
+	
+	console.log("==== 수정 ====");
+	person.age = 20;
+	person.address = "London";
+	
+	console.table(person);
+	
+	console.log("\n==== 삭제 ====");
+	delete person.address;
+	console.table(person);
+	</script>
+</body>
+</html>
