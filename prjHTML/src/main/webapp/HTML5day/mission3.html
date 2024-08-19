@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	let book1 = {
+		title: "자바스크립트",
+		author: "홍지원",
+		page: 500
+	};
+	let book2 = {
+			title: "데이터베이스",
+			author: "김겨울",
+			page: 300
+		};
+	
+	let bookList = [book1, book2];
+	
+	for(let i=0;i<bookList.length;i++){
+		console.log("name="+bookList[i].title+" | author="+bookList[i].author+" | page="+bookList[i].page);
+	}
+</script>
+</body>
+</html>

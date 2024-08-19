@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="text01"></input>
+	<input type="text"></input>
+
+	<script>
+		let text1 = document.querySelector("#text01");
+		
+		text1.addEventListener("click",() => {
+			text1.style.backgroundColor = "green";
+		});
+		
+
+		document.addEventListener("click", (event) => {
+			if (event.target !== text1) {
+				text1.style.backgroundColor = "white";
+			}
+		});
+	</script>
+</body>
+</html>

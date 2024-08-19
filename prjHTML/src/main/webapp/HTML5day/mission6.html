@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function work() {
+		console.log("여행");
+	}
+</script>
+</head>
+<body>
+	올해 여행을 가고 싶은 나라?
+	<br>
+	<br>
+	<select size="1" id="sel01">
+		<option value="1">스페인</option>
+		<option value="2" selected>터키</option>
+		<option value="3">브라질</option>
+		<option value="4">그리스</option>
+	</select>
+	<script>
+		let country = document.querySelector("#sel01");
+
+		country.onchange = work;
+	</script>
+</body>
+</html>

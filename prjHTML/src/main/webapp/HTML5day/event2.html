@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+  .container {
+    width: 300px;
+    height: 300px;
+    background-color: lightgray;
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+	<div class="container"></div>
+
+	<script>
+	let container = document.querySelector(".container");
+	container.onclick = (event) => {
+	alert(`이벤트 발생 위치: ${event.pageX},${event.pageY}`);
+	}
+	</script>
+</body>
+</html>

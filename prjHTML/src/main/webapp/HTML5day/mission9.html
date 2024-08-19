@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<select id="select01">
+		<option value="white" selected>White</option>
+		<option value="orange">Orange</option>
+		<option value="red">Red</option>
+		<option value="black">Black</option>
+	</select>
+	<button type="button" id="button01">초기화</button>
+	<script>
+	let id = document.querySelector("#select01");
+	id.addEventListener("change",() => {
+		console.log(id[id.selectedIndex].value);
+		document.body.style.backgroundColor = id[id.selectedIndex].value
+		});
+		
+	let btn = document.querySelector("#button01");
+	btn.addEventListener("click",() => {
+		console.log(id[id.selectedIndex].value);
+		document.body.style.backgroundColor = "white";
+		id.selectedIndex=0;
+		});
+</script>
+
+</body>
+</html>

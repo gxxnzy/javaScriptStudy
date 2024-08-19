@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<input type="text" maxlength="3" id="txt1" autofocus> - <input
+			type="text" id="txt2" maxlength="4"> - <input type="text"
+			id="txt3" maxlength="4"> <br> <input type="reset"
+			value="초기화">
+	</form>
+
+	<script>
+		let t1 = document.querySelector("#txt1");	
+		let t2 = document.querySelector("#txt2");	
+		let t3 = document.querySelector("#txt3");	
+		
+		t1.addEventListener("input",()=> {
+			console.log(t1.value.length);
+			console.log(t1);
+			if(t1.value.length >= parseInt(t1.maxLength)){
+				t2.focus();
+			}
+		});
+		t2.addEventListener("input",()=> {
+			console.log(t2.value.length);
+			console.log(t2);
+			if(t2.value.length >= parseInt(t2.maxLength)){
+				t3.focus();
+			}
+		});
+	</script>
+</body>
+</html>

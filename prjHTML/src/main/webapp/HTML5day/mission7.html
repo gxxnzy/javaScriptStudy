@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function toRightFunction(){
+		let leftT = document.getElementById('leftText').value;
+		document.getElementById('leftText').value = '';
+		document.getElementById('rightText').value = leftT;
+	}
+	function toLeftFunction(){
+		let rightT = document.getElementById('rightText').value;
+		document.getElementById('leftText').value = rightT;
+		document.getElementById('rightText').value = '';
+	}</script>
+</head>
+<body>
+	<input type="text" id="leftText">
+	<input type="text" id="rightText">
+	<br>
+	<button type="button" id="toRight">이동(오른쪽)</button>
+	<button type="button" id="toLeft">이동(왼쪽)</button>
+	<script>
+		let right = document.querySelector("#toRight");
+		let left = document.querySelector("#toLeft");
+		right.onclick = toRightFunction;
+		left.onclick = toLeftFunction;
+	</script>
+</body>
+</html>

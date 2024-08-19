@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<input type="button" value="클릭" id="btn01">
+	</form>
+
+	<script>
+		function work() {
+			console.log("hello");
+		}
+
+		const btn = document.querySelector("#btn01");
+		btn.addEventListener("click", work);
+	</script>
+</body>
+</html>

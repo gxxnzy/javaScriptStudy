@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	function fnCalorieSum(foodList){
+		let sum=0;
+		for(let i=0;i<foodList.length;i++){
+			console.log(foodList[i].kcal);
+			sum += foodList[i].kcal;
+		}
+		return sum;
+	}
+	
+	let foods = [];
+	let food1 = {name: "rice",kcal: 300};
+	let food2 = {name: "latte",kcal: 180};
+	let food3 = {name: "bagel",kcal: 176};
+	
+	foods.push(food1);
+	foods.push(food2);
+	foods.push(food3);
+	
+	let result = fnCalorieSum(foods);
+	console.log("열량:"+result+"(kcal)");
+</script>
+</body>
+</html>

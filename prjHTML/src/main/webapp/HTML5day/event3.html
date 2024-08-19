@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<img src="images/cat.jpg" id="cat">
+	</div>
+
+	<script>
+		let cat = document.querySelector('#cat');
+		cat.addEventListener("mouseover", changePic, false);
+		cat.addEventListener("mouseout", originPic, false);
+		
+		function changePic(){
+			cat.src = "images/cat2.jpg";
+		}
+		
+		function originPic(){
+			cat.src = "images/cat.jpg";
+		}
+	</script>
+</body>
+</html>

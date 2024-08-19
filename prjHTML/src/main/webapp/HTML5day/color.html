@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>좋아하는 색깔은?</h1>
+	<div id="container">
+		<input type="checkbox" name="color" value="White" class="color"
+			id="color01">White <input type="checkbox" name="color"
+			value="Black" class="color" id="color02">Black <input
+			type="checkbox" name="color" value="Red" class="color" id="color03">Red
+		<input type="checkbox" name="color" value="Blue" class="color"
+			id="color04">Blue <br> <input type="button"
+			value="Info All" id="btn_info_all"> <input type="button"
+			value="Info" id="btn_info">
+	</div>
+
+	<script>
+		function viewInfoAll() {
+			console.log("\n===== viewInfoAll() =====");
+			let obj = document.querySelectorAll(".color");
+
+			for (let i = 0; i < obj.length; i++) {
+				console.log('index=' + i + ' | value=' + obj[i].value);
+			}
+
+		}
+
+		function viewInfo() {
+			console.log("\n===== viewInfo() =====");
+			let obj = document.querySelectorAll(".color");
+
+			for (let i = 0; i < obj.length; i++) {
+				let checked = obj[i].checked;
+				if (checked === true) {
+					console.log('index=' + i + ' | value=' + obj[i].value);
+				}
+			}
+
+		}
+
+		const btn_info_all = document.querySelector("#btn_info_all");
+		btn_info_all.onclick = viewInfoAll;
+
+		const btn_info = document.querySelector("#btn_info");
+		btn_info.onclick = viewInfo;
+	</script>
+</body>
+</html>

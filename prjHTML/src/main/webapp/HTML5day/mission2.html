@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	let actors=["탐 크루즈","마일스 텔러","모니카 바바로"];
+	
+	let movie = {
+			title: "탑건 매버릭",
+			category: "액션",
+			director: "조셉 코신스키",
+			runningTime: 130,
+			actor: actors
+	};
+	
+	console.log("==== movie ====");
+	console.log("title=",movie.title);
+	console.log("category=",movie.category);
+	console.log("director=",movie.director);
+	console.log("runningTime=",movie.runningTime);
+	
+	console.log("\n---- actor ----");
+	for(let i=0;i<actors.length;i++){
+		console.log(`${i+1}. ${actors[i]}`);
+	}
+	
+</script>
+</body>
+</html>

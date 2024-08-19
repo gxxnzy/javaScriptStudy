@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	좋아하는 음식은?
+	<br>
+	<br>
+	<input type="checkbox" name="food" value="1" class="food" id="food01">라면
+	<br>
+	<input type="checkbox" name="food" value="2" class="food" id="food02">김밥
+	<br>
+	<input type="checkbox" name="food" value="3" class="food" id="food03"
+		checked>떡볶이
+	<br>
+	<input type="checkbox" name="food" value="4" class="food" id="food04">파스타
+	<br>
+	<br>
+	<br>
+	<input type="button" value="Info All" id="btn_info_all">
+	<input type="button" value="Info" id="btn_info">
+
+	<script>
+		function viewInfoAll() {
+			console.log("\n===== viewInfoAll() =====");
+			let obj = document.querySelectorAll(".food");
+
+			for (let i = 0; i < obj.length; i++) {
+				console.log('index=' + i + ' | value=' + obj[i].value);
+			}
+
+		}
+
+		function viewInfo() {
+			console.log("\n===== viewInfo() =====");
+			let obj = document.querySelectorAll(".food");
+
+			for (let i = 0; i < obj.length; i++) {
+				let checked = obj[i].checked;
+				if (checked === true) {
+					console.log('index=' + i + ' | value=' + obj[i].value);
+				}
+			}
+
+		}
+
+		const btn_info_all = document.querySelector("#btn_info_all");
+		btn_info_all.onclick = viewInfoAll;
+
+		const btn_info = document.querySelector("#btn_info");
+		btn_info.onclick = viewInfo;
+	</script>
+
+</body>
+
+</html>
