@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="2"><input type="button" id="button1"
+				onclick="button1_click()" value="Game Start"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><textarea cols="50" rows="8" id="kartinfo"
+					readonly></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="text" id="iteminfo" readonly></td>
+		</tr>
+		<tr>
+			<td>속도 : <input type="text" id="speed" readonly></td>
+			<td>부스터 : <input type="text" id="booster" readonly></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" id="speedUp"
+				onclick="button2_click()" value="Speed +"> <input
+				type="button" id="boosterUp" onclick="button4_click()" value="Booster +"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" id="speedDown" onclick="button3_click()" value="Speed -"> <input
+				type="button" id="boosterDown" onclick="button5_click()" value="Booster -"></td>
+		</tr>
+	</table>
+
+	<script>
+		const mainAudio = new Audio('audio/mainaudio.mp3');
+
+		const kart1 = {
+			name : '버스터',
+			color : 'Gold',
+			upSpeed : 40,
+			downSpeed : 80,
+			maxSpeed : 250,
+			upBooster : 100,
+			maxBooster : 2
+		};
+		
+		let sp = document.querySelector("#speed");
+		let bo = document.querySelector("#booster")
+		let bu = document.querySelector("#boosterUp");
+		let item = document.querySelector("#iteminfo");
+
+		function button1_click() {
+			setTimeout(play, 1000);
+		}
+		function play() {
+			sp.value = 0;
+			bo.value = 0;
+			printKartInfo();
+			mainAudio.play();
+		}
+		function printKartInfo() {
+			let ki = document.querySelector("#kartinfo");
+			ki.style.backgroundColor = "black";
+			ki.style.color = "white";
+			ki.value = '카트명: 버스터\n카트 컬러: Gold\n속도 Up 호출 시 증가 속도: 40(km)\n속도 Down 호출 시 감소 속도: 80(km)\n최대 속도: 250(km)\n부스터 사용시 증가 속도: 100(km)\n부스터 최대 보유 개수: 2(개)';
+		}
+		function button2_click() {
+			if (parseInt(sp.value)
+					+ kart1.upSpeed >= 250) {
+				sp.value = 250;
+				item.value = '최대 속도 입니다!';
+			} else {
+				sp.value = parseInt(sp.value)
+						+ kart1.upSpeed;
+				item.value = 'SpeedUp!';
+			}
+		}
+		function button3_click(){
+			if (parseInt(sp.value)
+					- kart1.downSpeed <= 0) {
+				sp.value = 0;
+				item.value = '속도 0입니다!';
+			} else {
+				sp.value = parseInt(sp.value)
+						- kart1.downSpeed;
+				item.value = 'SpeedDown!';
+			}
+		}
+		function button4_click(){
+			if(parseInt(bo.value)+1>=2){
+				bo.value = 2;
+				item.value = '부스터를 더 이상 모을 수 없습니다!';
+			}else{
+				bo.value = parseInt(bo.value)+1;
+				item.value = 'BoosterUp!';
+			}
+		}
+		function button5_click(){
+			if(parseInt(bo.value)-1<=0){
+				bo.value = 0;
+				item.value = '부스터가 없습니다!';
+			}else{
+				bo.value = parseInt(bo.value)-1;
+				sp.value = parseInt(sp.value) + 100;
+				item.value = '부스터 사용!';
+				setTimeout(originSpeed,3000);
+			}
+		}
+		function originSpeed(){
+			sp.value = parseInt(sp.value)-100;
+			item.value = '부스터 끝!';
+		}
+	</script>
+</body>
+</html>

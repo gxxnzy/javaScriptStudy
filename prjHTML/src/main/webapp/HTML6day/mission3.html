@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let timer;
+	let count = 0;
+
+	function startTimer() {
+		timer = setInterval(work, 2000);
+	}
+	function work() {
+		count++;
+		console.log("Wow", count);
+	}
+	function stopTimer() {
+		clearInterval(timer);
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="시작" id="btn_start">
+	<input type="button" value="정지" id="btn_stop">
+	<script>
+		const btn_start = document.querySelector("#btn_start");
+		btn_start.onclick = startTimer;
+
+		const btn_stop = document.querySelector("#btn_stop");
+		btn_stop.onclick = stopTimer;
+	</script>
+</body>
+</html>

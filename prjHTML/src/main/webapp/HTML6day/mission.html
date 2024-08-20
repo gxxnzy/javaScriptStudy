@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function printCountry(continent){
+		if(continent==="america"){
+			return ["브라질","아르헨티나","쿠바"];
+		} else if (continent==="europe"){
+			return ["스페인","그리스","이탈리아"];
+		} else if (continent==="asia"){
+			return ["베트남","홍콩","방콕"];
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h6>여행 지역을 선택하세요</h6>
+		<select id="sel01">
+			<option value="america" selected>아메리카</option>
+			<option value="europe">유럽</option>
+			<option value="asia">아시아</option>
+		</select>
+	</div>
+	<div id="countryList"></div>
+
+	<script>
+		let country = document.querySelector("#sel01");
+
+
+		function updateCountryList(){
+			const selVal = country.value;
+			let countries = printCountry(selVal);
+			let countryListDiv = document.querySelector("#countryList");
+			countryListDiv.innerHTML = "";
+			
+			let ul = document.createElement("ul");
+			countries.forEach(country => {
+				let li = document.createElement("li");
+				li.textContent = country;
+				ul.appendChild(li);
+			});
+			countryListDiv.appendChild(ul);
+		}
+		
+		updateCountryList();
+		
+		country.addEventListener("change",updateCountryList);
+	</script>
+</body>
+</html>
