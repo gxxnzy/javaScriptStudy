@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+	function showGraph() {
+
+		$.ajax({
+			type : "get",
+			url : "https://api.upbit.com/v1/candles/days",
+			data : {
+				market : "KRW-BTC",
+				count : 100,
+			},
+			dataType : "json",
+			success : function(result) {
+				console.log(result);
+			}
+		})
+
+	}
+</script>
+
+</head>
+<body>
+	<input type="button" onclick="showGraph()" value="그래프 조회">
+
+</body>
+</html>

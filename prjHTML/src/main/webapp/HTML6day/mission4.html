@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<style>
+table {
+	margin: 0 auto;
+	width: 40%;
+	border: 1px solid gray;
+}
+
+th, td {
+	border: 1px solid gray;
+}
+</style>
+<script>
+	$(document).ready(function() {
+		// ==================================================
+		// :eq(index)	입력 인덱스 요소
+		// :gt(index)		입력 인덱스 보다 큰 요소
+		// :lt(index)		입력 인댁스 보다 작은 요소
+		// ==================================================
+			
+		$("tr:eq(0)").css("background-color", "orange"); // 인덱스 === 0
+		$("tr:gt(3)").css("background-color", "skyblue"); // 인덱스 > 3
+		$("tr:lt(3)").css("background-color", "gold"); // 인덱스 < 3
+		$("tr:lt(3)").css("color", "blue"); // 인덱스 < 3
+		$("tr:lt(3)").css("font-weight", "bold"); // 인덱스 < 3
+
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>항목</td>
+			<td>값</td>
+		</tr>
+		<tr>
+			<td>아메리카노</td>
+			<td>2000</td>
+		</tr>
+		<tr>
+			<td>카페라떼</td>
+			<td>2500</td>
+		</tr>
+		<tr>
+			<td>카푸치노</td>
+			<td>3000</td>
+		</tr>
+		<tr>
+			<td>카페모카</td>
+			<td>3500</td>
+		</tr>
+		<tr>
+			<td>콜드브루</td>
+			<td>4000</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		$("#btn").click(function(){
+			$("#box").append("<p style='color:pink'>안녕하세요</p>");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="box"></div>
+	<button id="btn">요소 추가하기</button>
+</body>
+</html>

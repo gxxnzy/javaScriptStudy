@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+body {
+	text-align: center;
+}
+
+table {
+	width: 80%;
+	margin: auto;
+	border: 1px solid #ccc;
+	border-spacing: 1px;
+}
+</style>
+<script>
+	//==================================================
+	//# 3자리 수마다 콤마 찍기
+	//==================================================
+	function numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+
+	//==================================================
+	//# 검색
+	//==================================================
+	function search() {
+
+		// --------------------------------------------------
+		// # 검색 일자
+		// - 입력받은 날짜(YYYY-MM-DD)를 전송 가능한 형태(YYYYMMDD)로 변환한다.
+		// --------------------------------------------------
+
+		let boxOfficeDate; // 검색일자(형식 : YYYYMMDD)
+
+		boxOfficeDate = $("#searchDate").val().replace(/-/g,"");
+
+		console.log("boxOfficeDate=", boxOfficeDate);
+
+		// --------------------------------------------------
+		// # Ajax
+		// --------------------------------------------------
+		$.ajax({
+
+			type : "get",
+			url : "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=16aa1c5a57dc77debdbe09fcb7c72591",
+			data : {
+				targetDt : boxOfficeDate
+			},
+			dataType : "json",
+
+			// --------------------------------------------------
+			// # 검색 성공
+			// --------------------------------------------------
+			success : function(result) {
+				let title = result.boxOfficeResult.boxofficeType;
+				console.log("제목=",title);
+				
+				let fromTo = result.boxOfficeResult.showRange;
+				console.log("기간=",fromTo);
+				
+				let listLength = result.boxOfficeResult.dailyBoxOfficeList.length;
+				console.log("검색 결과 건수=",listLength);
+				
+				for(let i=0;i<listLength;i++){
+					
+					let rank = result.boxOfficeResult.dailyBoxOfficeList[i].rank;
+					let movieName = result.boxOfficeResult.dailyBoxOfficeList[i].movieNm;
+					let audiCnt = result.boxOfficeResult.dailyBoxOfficeList[i].audiCnt;
+					console.log(rank,movieName,audiCnt);
+				}
+			},
+
+			// --------------------------------------------------
+			// # 검색 실패
+			// --------------------------------------------------
+			error : function(xhr, status, error) {
+				alert("error");
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<input type="date" id="searchDate">
+	<input type="button" onclick="search()" value="박스오피스 조회">
+	<hr width="90%">
+	<div id="movieInfo"></div>
+</body>
+</html>

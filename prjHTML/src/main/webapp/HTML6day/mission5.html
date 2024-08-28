@@ -1,0 +1,63 @@
+<!-- 
+// ==================================================
+// # 필터(Filter) 선택자
+// ==================================================
+
+:first			첫번째 요소
+:last			마지막 요소
+:even			인덱스가 짝수번째 요소(1st Index : 0)
+:odd			인덱스가 홀수번째 요소
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<style>
+table {
+	margin: 0 auto;
+	width: 40%;
+	border: 1px solid gray;
+}
+
+th, td {
+	border: 1px solid gray;
+}
+</style>
+<script>
+	$(document).ready(function() {
+		$("tr:even").css("background-color", "orange");
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>항목</td>
+			<td>값</td>
+		</tr>
+		<tr>
+			<td>아메리카노</td>
+			<td>2000</td>
+		</tr>
+		<tr>
+			<td>카페라떼</td>
+			<td>2500</td>
+		</tr>
+		<tr>
+			<td>카푸치노</td>
+			<td>3000</td>
+		</tr>
+		<tr>
+			<td>카페모카</td>
+			<td>3500</td>
+		</tr>
+		<tr>
+			<td>콜드브루</td>
+			<td>4000</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function() {
+		$("#btn").click(function() {
+			$("#image").attr("src", "images/cat2.jpg");
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		<img id="image" src="images/cat.jpg">
+	</p>
+	<button id="btn">이미지 교체하기</button>
+</body>
+</html>
